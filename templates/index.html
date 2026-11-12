@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haajiri - Face attendance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<main class="auth">
+  <section class="auth-art" aria-hidden="false">
+    <div>
+      <div class="word">Haajiri</div>
+      <div class="kn">ಹಾಜರಿ &middot; attendance</div>
+      <p class="lead">Walk in, face the camera, and you are marked present.</p>
+    </div>
+    <div class="scan" aria-hidden="true">
+      <svg viewBox="0 0 400 320" fill="none">
+        <rect x="6" y="6" width="388" height="308" rx="22" fill="#1B2050"/>
+        <g stroke="#7C75FF" stroke-width="4" stroke-linecap="round">
+          <path d="M60 70V50a14 14 0 0 1 14-14h20"/><path d="M180 70V50a14 14 0 0 0-14-14h-20" transform="translate(0 0)"/>
+          <path d="M60 190v20a14 14 0 0 0 14 14h20"/><path d="M180 190v20a14 14 0 0 1-14 14h-20"/>
+        </g>
+        <circle cx="120" cy="124" r="40" fill="#2E3478"/><path d="M62 224c6-34 30-50 58-50s52 16 58 50" fill="#2E3478"/>
+        <rect x="64" y="236" width="112" height="28" rx="14" fill="#0F9D78"/>
+        <text x="120" y="255" text-anchor="middle" font-family="Figtree, sans-serif" font-size="14" font-weight="700" fill="#fff">Meera &#183; 96%</text>
+        <circle cx="290" cy="150" r="32" fill="#2A2F66"/><path d="M244 232c5-28 24-40 46-40s41 12 46 40" fill="#2A2F66"/>
+        <rect x="236" y="244" width="108" height="26" rx="13" fill="#3A3F80"/>
+        <text x="290" y="262" text-anchor="middle" font-family="Figtree, sans-serif" font-size="13" font-weight="600" fill="#C7C8EA">Looking...</text>
+      </svg>
+      <div class="beam"></div>
+    </div>
+    <p class="small" style="color:#9EA0D6">MVJ College of Engineering, Whitefield, Bengaluru</p>
+  </section>
+
+  <section class="auth-form">
+    <div class="box">
+      <div class="seg" role="tablist" aria-label="Sign in or create account">
+        <button class="on" data-tab="login" role="tab">Sign in</button>
+        <button data-tab="register" role="tab">Create account</button>
+      </div>
+
+      <form id="login-form" novalidate>
+        <h1>Welcome back</h1>
+        <label class="field"><span>Email or roll number</span><input class="input" name="email" autocomplete="username" required></label>
+        <label class="field"><span>Password</span><input class="input" type="password" name="password" autocomplete="current-password" required></label>
+        <div class="error-text" data-err></div>
+        <button class="btn primary" type="submit">Sign in</button>
+      </form>
+
+      <form id="register-form" class="hide" novalidate>
+        <h1>Create your account</h1>
+        <div class="seg" role="radiogroup" aria-label="I am a">
+          <button type="button" class="on" data-role="student">Student</button>
+          <button type="button" data-role="teacher">Teacher</button>
+        </div>
+        <label class="field"><span>Full name</span><input class="input" name="name" autocomplete="name" required></label>
+        <label class="field"><span>Email</span><input class="input" type="email" name="email" autocomplete="email" required></label>
+        <div class="row" data-for="student">
+          <label class="field grow"><span>Roll number (USN)</span><input class="input" name="roll_no" placeholder="1MJ23CS001"></label>
+          <label class="field" style="width:110px"><span>Section</span><input class="input" name="section" placeholder="5A"></label>
+        </div>
+        <label class="field hide" data-for="teacher"><span>Teacher access code</span><input class="input" name="code" autocomplete="off"><em class="hint">Your department gives you this code.</em></label>
+        <label class="field"><span>Password</span><input class="input" type="password" name="password" autocomplete="new-password" required><em class="hint">At least 6 characters.</em></label>
+        <div class="error-text" data-err></div>
+        <button class="btn primary" type="submit">Create account</button>
+      </form>
+    </div>
+  </section>
+</main>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/auth.js"></script>
+</body>
+</html>
